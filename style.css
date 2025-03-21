@@ -1,0 +1,171 @@
+/* styles.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  svg {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .gradient-background {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at 30% 30%, #8e2de2, #ff6a00, #00b4db, #ee0979);
+    background-size: 800% 800%;
+    animation: gradientShift 18s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .container {
+    position: relative;
+    text-align: center;
+    max-width: 600px;
+    margin: 15vh auto;
+    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+    padding: 15px 40px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  .notify-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .notify-form input {
+    padding: 14px 20px;
+    border-radius: 40px;
+    border: none;
+    width: 60%;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s;
+  }
+  
+  .notify-form input:focus {
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+  }
+  
+  .notify-form button {
+    padding: 14px 30px;
+    border-radius: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, background 0.3s;
+  }
+  
+  .notify-form button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+  
+  /* Mobile Responsiveness */
+  
+  @media (max-width: 768px) {
+    svg {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .container {
+      max-width: 90%;
+      margin: 10vh auto;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .notify-form input {
+      width: 80%;
+    }
+  
+    .notify-form button {
+      width: 80%;
+      padding: 12px 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .container {
+      max-width: 90%;
+      margin: 8vh auto;
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .notify-form input {
+      width: 90%;
+    }
+  
+    .notify-form button {
+      width: 90%;
+      padding: 12px 20px;
+    }
+  }
+  
