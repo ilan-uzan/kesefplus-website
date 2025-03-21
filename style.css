@@ -10,8 +10,8 @@ body, html {
   }
   
   svg {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
   
   .gradient-background {
@@ -111,8 +111,8 @@ body, html {
   
   @media (max-width: 768px) {
     svg {
-      width: 200px;
-      height: 200px;
+      width: 350px;
+      height: 350px;
     }
   
     .container {
