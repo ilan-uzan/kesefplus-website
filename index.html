@@ -38,21 +38,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script>
-        // Simple redirect to main browser
-        function redirectToMainBrowser() {
+        // Simple redirect to native browser
+        function redirectToNativeBrowser() {
             const url = 'https://kesefplus.app';
             if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-                window.location.href = 'googlechrome://' + url;
-                setTimeout(function() {
-                    window.location.href = url;
-                }, 1000);
+                window.location.href = url; // Will open in Safari on iOS
             } else if (navigator.userAgent.match(/Android/i)) {
-                window.location.href = 'googlechrome://' + url;
-                setTimeout(function() {
-                    window.location.href = url;
-                }, 1000);
+                window.location.href = url; // Will open in default browser on Android
             } else {
-                window.location.href = url;
+                window.location.href = url; // Will open in default browser on other devices
             }
         }
 
@@ -63,7 +57,7 @@
             userAgent.includes('twitter') || 
             userAgent.includes('linkedin') || 
             userAgent.includes('messenger')) {
-            redirectToMainBrowser();
+            redirectToNativeBrowser();
         }
 
         // Handle external links
