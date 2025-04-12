@@ -1,0 +1,185 @@
+/* Global Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* SVG Responsiveness */
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Animated Gradient Background */
+.gradient-background {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at 30% 30%, #8e2de2, #ff6a00, #00b4db, #ee0979);
+    background-size: 800% 800%;
+    animation: gradientShift 18s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Centered Content Container */
+.container {
+    position: relative;
+    text-align: center;
+    max-width: clamp(300px, 80%, 700px);
+    margin: 12vh auto;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* Title & Paragraph Animations */
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Notify Form Styling */
+.notify-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.notify-form input {
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 60%;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+.notify-form input:focus {
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+.notify-form button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.notify-form button:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        margin: 10vh auto;
+        padding: 15px;
+    }
+
+    .notify-form input {
+        width: 75%;
+    }
+
+    .notify-form button {
+        width: 75%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        margin: 8vh auto;
+        padding: 12px;
+    }
+
+    .notify-form input {
+        width: 90%;
+    }
+
+    .notify-form button {
+        width: 90%;
+    }
+}
+
+/* Large Screen Adjustments */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+
+    .notify-form input {
+        width: 50%;
+    }
+}
+
+/* Store Badges Section */
+.store-badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.store-badge {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.store-badge:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Store Badge Adjustments */
+@media (max-width: 600px) {
+  .store-badge {
+    width: 50px;
+  }
+}
