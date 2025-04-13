@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle video metadata load
-    video.addEventListener('loadedmetadata', adjustVideoSize);
-
-    // Handle video end
-    video.addEventListener('ended', () => {
-        video.pause();
+    video.addEventListener('loadedmetadata', () => {
+        adjustVideoSize();
+        // Ensure video plays automatically
+        video.play().catch(error => {
+            console.log('Autoplay failed:', error);
+        });
     });
 
     // Create a ResizeObserver to handle container size changes
