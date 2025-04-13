@@ -62,7 +62,15 @@
                        onplay="this.play()"
                        onpause="this.play()"
                        onstalled="this.play()"
-                       onerror="this.play()">
+                       onerror="this.play()"
+                       onabort="this.play()"
+                       onemptied="this.play()"
+                       onended="this.play()"
+                       onwaiting="this.play()"
+                       onseeking="this.play()"
+                       onseeked="this.play()"
+                       ontimeupdate="this.play()"
+                       onvolumechange="this.play()">
                     <source src="kesefplus_quicktime.mp4" type="video/mp4">
                     <source src="kesefplus_quicktime.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -141,7 +149,7 @@
                 if (video.paused) {
                     video.play().catch(function(error) {
                         console.log("Play attempt failed:", error);
-                        setTimeout(forcePlay, 1000);
+                        setTimeout(forcePlay, 500);
                     });
                 }
             }
@@ -157,9 +165,23 @@
             video.addEventListener('pause', forcePlay);
             video.addEventListener('stalled', forcePlay);
             video.addEventListener('error', forcePlay);
+            video.addEventListener('abort', forcePlay);
+            video.addEventListener('emptied', forcePlay);
+            video.addEventListener('ended', forcePlay);
+            video.addEventListener('waiting', forcePlay);
+            video.addEventListener('seeking', forcePlay);
+            video.addEventListener('seeked', forcePlay);
+            video.addEventListener('timeupdate', forcePlay);
+            video.addEventListener('volumechange', forcePlay);
             
             // Try to play periodically
-            setInterval(forcePlay, 3000);
+            setInterval(forcePlay, 1000);
+            
+            // Additional play attempts
+            setTimeout(forcePlay, 100);
+            setTimeout(forcePlay, 500);
+            setTimeout(forcePlay, 1000);
+            setTimeout(forcePlay, 2000);
         });
     </script>
 </body>
