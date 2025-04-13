@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle video end - pause the video
+    video.addEventListener('ended', () => {
+        video.pause();
+    });
+
     // Create a ResizeObserver to handle container size changes
     const resizeObserver = new ResizeObserver(adjustVideoSize);
     resizeObserver.observe(videoContainer);
