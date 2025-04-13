@@ -55,7 +55,10 @@
                        x5-video-player-type="h5" 
                        x5-video-player-fullscreen="true"
                        preload="auto"
-                       style="width: 100%; height: 100%; object-fit: cover;">
+                       style="width: 100%; height: 100%; object-fit: cover;"
+                       onloadedmetadata="this.play()"
+                       onloadeddata="this.play()"
+                       oncanplay="this.play()">
                     <source src="kesefplus_quicktime.mp4" type="video/mp4">
                     <source src="kesefplus_quicktime.webm" type="video/webm">
                     Your browser does not support the video tag.
